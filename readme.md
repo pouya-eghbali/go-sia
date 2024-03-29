@@ -1,5 +1,8 @@
 # Sia
 
+[![GoDev](https://img.shields.io/static/v1?label=godev&message=reference&color=00add8)][godev]
+[![Build Status](https://github.com/pouya-eghbali/go-sia/actions/workflows/test.yml/badge.svg?branch=master)][actions]
+
 Sia - Binary serialisation and deserialisation with built-in compression. You can consider Sia a strongly typed, statically typed domain specific binary language for constructing data. Sia preserves data types and supports custom ones.
 
 ## Install
