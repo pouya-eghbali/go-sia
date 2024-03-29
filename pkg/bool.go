@@ -1,6 +1,6 @@
 package sia
 
-func (s *Sia) AddBool(b bool) *Sia {
+func (s *sia) AddBool(b bool) Sia {
 	if b {
 		s.Content = append(s.Content, 1)
 	} else {
@@ -9,7 +9,7 @@ func (s *Sia) AddBool(b bool) *Sia {
 	return s
 }
 
-func (s *Sia) ReadBool() bool {
+func (s *sia) ReadBool() bool {
 	if s.Index >= uint64(len(s.Content)) {
 		return false
 	}

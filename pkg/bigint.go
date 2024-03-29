@@ -4,14 +4,14 @@ import (
 	"math/big"
 )
 
-func (s *Sia) AddBigInt(n *big.Int) *Sia {
+func (s *sia) AddBigInt(n *big.Int) Sia {
 	bytes := n.Bytes()
 	s.Content = append(s.Content, byte(len(bytes)))
 	s.Content = append(s.Content, n.Bytes()...)
 	return s
 }
 
-func (s *Sia) ReadBigInt() *big.Int {
+func (s *sia) ReadBigInt() *big.Int {
 	if s.Index >= uint64(len(s.Content)) {
 		return new(big.Int)
 	}
