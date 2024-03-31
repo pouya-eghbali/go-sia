@@ -6,7 +6,7 @@ import (
 
 type Sia interface {
 	Seek(index uint64) Sia
-	Byte() []byte
+	Bytes() []byte
 
 	EmbedSia(s2 *sia) Sia
 	EmbedBytes(b []byte) Sia
@@ -74,7 +74,7 @@ func (s *sia) EmbedBytes(b []byte) Sia {
 	return s
 }
 
-func (s *sia) Byte() []byte {
+func (s *sia) Bytes() []byte {
 	return s.Content
 }
 
