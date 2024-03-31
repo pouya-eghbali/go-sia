@@ -82,7 +82,7 @@ func New() Sia {
 	return &sia{}
 }
 
-func NewFromByte(content []byte) Sia {
+func NewFromBytes(content []byte) Sia {
 	return &sia{
 		Content: content,
 	}
