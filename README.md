@@ -21,12 +21,12 @@ Serializing:
 rawByte := sia.New().
     AddUInt16(1234).
     AddString64("think simple, do simple!").
-    Byte()
+    Bytes()
 ```
 
 Deserializing:
 ```go
-deserialized := sia.NewFromByte(rawByte)
+deserialized := sia.NewFromBytes(rawByte)
 gotSampleUint16 := deserialized.ReadUInt16() // 1234
 gotSampleString := deserialized.ReadString64() // think simple, do simple!
 ```
