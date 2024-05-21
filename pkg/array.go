@@ -58,3 +58,13 @@ func (s *ArraySia[T]) ReadArray64(fn func(s *ArraySia[T]) T) []T {
 	length := s.ReadUInt64()
 	return s.read(length, fn)
 }
+
+func NewSiaArray[T any]() *ArraySia[T] {
+	return &ArraySia[T]{}
+}
+
+func NewArrayFromBytes[T any](content []byte) *ArraySia[T] {
+	return &ArraySia[T]{
+		sia{Content: content},
+	}
+}
