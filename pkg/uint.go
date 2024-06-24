@@ -43,7 +43,7 @@ func (s *sia) ReadUInt32() uint32 {
 	}
 
 	n := binary.LittleEndian.Uint32(s.Content[s.Index : s.Index+4])
-	s.Index += 2
+	s.Index += 4
 	return n
 }
 
