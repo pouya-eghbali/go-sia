@@ -1,5 +1,14 @@
 package sia
 
+func (s *sia) AddString(str string) Sia {
+	s.AddByteArray([]byte(str))
+	return s
+}
+
+func (s *sia) ReadString(length uint64) string {
+	return string(s.ReadByteArray(length))
+}
+
 func (s *sia) AddString8(str string) Sia {
 	s.AddByteArray8([]byte(str))
 	return s

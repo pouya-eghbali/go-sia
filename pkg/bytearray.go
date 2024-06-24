@@ -10,6 +10,15 @@ func (s *sia) readBytesAt(start uint64, length uint64) []byte {
 	return bytes
 }
 
+func (s *sia) AddByteArray(bytes []byte) Sia {
+	s.Content = append(s.Content, bytes...)
+	return s
+}
+
+func (s *sia) ReadByteArray(length uint64) []byte {
+	return s.readBytesAt(s.Index, length)
+}
+
 func (s *sia) AddByteArray8(bytes []byte) Sia {
 	s.AddUInt8(uint8(len(bytes)))
 	s.Content = append(s.Content, bytes...)
