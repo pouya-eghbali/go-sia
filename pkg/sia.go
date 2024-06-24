@@ -23,6 +23,8 @@ type Sia interface {
 	ReadUInt16() uint16
 	AddUInt8(n uint8) Sia
 	ReadUInt8() uint8
+	AddStringN(str string) Sia
+	ReadStringN(length uint64) string
 	AddString8(str string) Sia
 	ReadString8() string
 	AddString16(str string) Sia
@@ -40,6 +42,8 @@ type Sia interface {
 	AddInt8(n int8) Sia
 	ReadInt8() int8
 	readBytesAt(start uint64, length uint64) []byte
+	AddByteArrayN(bytes []byte) Sia
+	ReadByteArrayN(length uint64) []byte
 	AddByteArray8(bytes []byte) Sia
 	ReadByteArray8() []byte
 	AddByteArray16(bytes []byte) Sia
