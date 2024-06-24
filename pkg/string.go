@@ -1,12 +1,12 @@
 package sia
 
-func (s *sia) AddString(str string) Sia {
-	s.AddByteArray([]byte(str))
+func (s *sia) AddStringN(str string) Sia {
+	s.AddByteArrayN([]byte(str))
 	return s
 }
 
-func (s *sia) ReadString(length uint64) string {
-	return string(s.ReadByteArray(length))
+func (s *sia) ReadStringN(length uint64) string {
+	return string(s.ReadByteArrayN(length))
 }
 
 func (s *sia) AddString8(str string) Sia {
