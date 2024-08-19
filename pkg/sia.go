@@ -7,6 +7,7 @@ import (
 type Sia interface {
 	Seek(index uint64) Sia
 	Bytes() []byte
+	Offset() uint64
 
 	EmbedSia(s2 *sia) Sia
 	EmbedBytes(b []byte) Sia
@@ -80,6 +81,10 @@ func (s *sia) EmbedBytes(b []byte) Sia {
 
 func (s *sia) Bytes() []byte {
 	return s.Content
+}
+
+func (s *sia) Offset() uint64 {
+	return s.Index
 }
 
 func New() Sia {
